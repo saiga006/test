@@ -1,0 +1,12 @@
+import cv2
+import numpy as np
+cap=cv2.VideoCapture(0)
+while(True):
+	ret, frame=cap.read()
+	gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+	cv2.imshow('color',frame)
+	cv2.imshow('frame',gray)
+	if cv2.waitKey(1) & 0XFF ==ord('q'):		#find what ord will do
+		break
+cap.release()
+cv2.destroyAllWindows()			
